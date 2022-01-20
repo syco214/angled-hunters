@@ -192,7 +192,7 @@ export function Swap() {
       return (
         <SwapCard key={ape.mint}>
           {imageMap[ape.mint] ? (
-            <NftImage src={imageMap[ape.mint]} alt="ape" />
+            <NftImage src={imageMap[ape.mint]} alt="hunter" />
           ) : (
             <Placeholder />
           )}  
@@ -203,6 +203,10 @@ export function Swap() {
               const [mintA, mintB] = pair;
               await handleSubmit({ mintA, mintB, currentMint: ape.mint });
             }}
+            sx={{  fontWeight: "bold",
+              fontSize: "1rem",
+              display: "block",
+              fontFamily: 'Saira Extra Condensed', }}
           >
             {isOldToken ? "Swap for New Token" : "Swap for Old Token"}
           </Button>
@@ -225,7 +229,10 @@ export function Swap() {
       <SwapBox>
         {loading && <CircularProgress />}
         {!loading && !wallet?.connected && (
-          <Button variant="contained" onClick={() => setVisible(true)}>
+          <Button variant="contained" onClick={() => setVisible(true)} sx={{  fontWeight: "bold",
+          fontSize: "1rem",
+          display: "block",
+          fontFamily: 'Saira Extra Condensed', }}>
             Connect Wallet
           </Button>
         )}
