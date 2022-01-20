@@ -63,21 +63,26 @@ const Placeholder = styled("div")({
 const Title = styled("h1")({
   color: "#FFE81F",
   fontWeight: "bold",
-  fontSize: "3rem",
+  fontSize: "4rem",
+  fontFamily: 'Saira Extra Condensed', 
 });
 
 const Title2 = styled("h1")({
   color: "#FFE81F",
   fontWeight: "bold",
-  fontSize: "2rem",
+  fontSize: "3rem",
   display: "block",
+  fontFamily: 'Saira Extra Condensed', 
 });
 
 const About = styled("p")({
   color: "#FFFFFF",
   maxWidth: 530,
   textAlign: "center",
+  fontFamily: 'Saira', 
+  fontWeight: 300,
 });
+
 
 const allMintAddresses = mintList.flat();
 
@@ -209,10 +214,10 @@ export function Swap() {
 
   return (
     <SwapRoot>
-      <Title>Bounty Hunter Swap</Title>
+      <Title>BOUNTY HUNTER SWAP</Title>
       {!loading && !!wallet?.connected && (
         <About>
-          Initial swap is 0.3 SOL all swaps after that will be free. You can swap
+          Initial swap is 0.3 SOL, all swaps after that will be free. You can swap
           back and forth as many times as you'd like as long as you own the
           token. There may be two transactions you have to approve.
         </About>
@@ -239,6 +244,10 @@ export function Swap() {
               target="_blank"
               rel="noopener noreferrer"
               href="https://magiceden.io/marketplace/bounty_hunter_space_guild"
+              sx={{  fontWeight: "bold",
+              fontSize: "1rem",
+              display: "block",
+              fontFamily: 'Saira Extra Condensed', }}
             >
               Redeem yourself
             </Button>
