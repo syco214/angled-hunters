@@ -211,7 +211,7 @@ export function Swap() {
               display: "block",
               fontFamily: 'Saira Extra Condensed', }}
           >
-            {isOldToken ? "Swap for New Token" : "Swap for Old Token"}
+            {isOldToken ? "Swap for Angled Hunter" : "Swap for Normal Hunter"}
           </Button>
           <SwapImage id={swapToken} />
         </SwapCard>
