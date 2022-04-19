@@ -15,6 +15,7 @@ import { ensureAtaExists } from "../utils/ensureAtaExists";
 import { useWalletModal } from "../contexts/WalletContext";
 import { useConnection } from "../contexts/ConnectionContext";
 import mintList from "../utils/mint-list.json";
+import SwapImage from "./SwapImage";
 
 const SwapRoot = styled("div")({
   display: "flex",
@@ -189,6 +190,8 @@ export function Swap() {
     (ape) => {
       const pair = mintList.find((addresses) => addresses.includes(ape.mint));
       const isOldToken = pair?.indexOf(ape.mint) === 1;
+      const swapToken = pair !== undefined ? (pair?.indexOf(ape.mint) === 1 ? pair[0] : pair[1]) : null
+      
       return (
         <SwapCard key={ape.mint}>
           {imageMap[ape.mint] ? (
@@ -210,6 +213,7 @@ export function Swap() {
           >
             {isOldToken ? "Swap for New Token" : "Swap for Old Token"}
           </Button>
+          <SwapImage id={swapToken} />
         </SwapCard>
       );
     },
